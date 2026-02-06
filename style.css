@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+/* Light theme */
+body.light {
+    background: #e0e5ec;
+}
+
+/* Dark theme */
+body.dark {
+    background: #2d3748;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+body.light .theme-toggle {
+    background: #e0e5ec;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
+                -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+body.dark .theme-toggle {
+    background: #2d3748;
+    box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.4),
+                -9px -9px 16px rgba(255, 255, 255, 0.05);
+}
+
+.theme-toggle:active {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.calculator {
+    border-radius: 30px;
+    padding: 30px;
+    width: 380px;
+    transition: all 0.3s ease;
+}
+
+body.light .calculator {
+    background: #e0e5ec;
+    box-shadow: 20px 20px 40px rgba(163, 177, 198, 0.6),
+                -20px -20px 40px rgba(255, 255, 255, 0.5);
+}
+
+body.dark .calculator {
+    background: #2d3748;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.4),
+                -20px -20px 40px rgba(255, 255, 255, 0.05);
+}
+
+.display {
+    font-weight: 300;
+    padding: 20px;
+    text-align: right;
+    margin-bottom: 30px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+body.light .display {
+    color: #2d3748;
+    background: #e0e5ec;
+    box-shadow: inset 6px 6px 12px rgba(163, 177, 198, 0.5),
+                inset -6px -6px 12px rgba(255, 255, 255, 0.5);
+}
+
+body.dark .display {
+    color: #ffffff;
+    background: #2d3748;
+    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.4),
+                inset -6px -6px 12px rgba(255, 255, 255, 0.03);
+}
+
+.expression {
+    font-size: 1.2rem;
+    min-height: 25px;
+    opacity: 0.6;
+    word-wrap: break-word;
+}
+
+.result {
+    font-size: 3.5rem;
+    word-wrap: break-word;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    padding: 0;
+    height: 70px;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Light theme buttons */
+body.light .number,
+body.light .function {
+    background: #e0e5ec;
+    box-shadow: 6px 6px 12px rgba(163, 177, 198, 0.6),
+                -6px -6px 12px rgba(255, 255, 255, 0.5);
+}
+
+body.light .number {
+    color: #2d3748;
+}
+
+body.light .function {
+    color: #718096;
+}
+
+body.light .operator,
+body.light .equals {
+    background: #e0e5ec;
+    color: #f59e0b;
+    box-shadow: 6px 6px 12px rgba(163, 177, 198, 0.6),
+                -6px -6px 12px rgba(255, 255, 255, 0.5);
+}
+
+body.light button:active {
+    box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.6),
+                inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Dark theme buttons */
+body.dark .number,
+body.dark .function {
+    background: #2d3748;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4),
+                -6px -6px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .number {
+    color: #ffffff;
+}
+
+body.dark .function {
+    color: #a0aec0;
+}
+
+body.dark .operator,
+body.dark .equals {
+    background: #2d3748;
+    color: #f59e0b;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4),
+                -6px -6px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark button:active {
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.4),
+                inset -3px -3px 6px rgba(255, 255, 255, 0.03);
+}
+
+.zero {
+    grid-column: span 2;
+}
